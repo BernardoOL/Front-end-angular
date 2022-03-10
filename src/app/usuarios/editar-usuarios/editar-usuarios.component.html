@@ -1,0 +1,24 @@
+<h1 class="text-center">Bem vindo {{usuario.nome}}</h1>
+
+<div *ngIf="">
+
+</div>
+
+<div>
+  <label for="nome" class="form-label">name</label>
+  <input type="text" class="form-control" nome="nome" id="nome" [(ngModel)]="usuario.nome"/>
+
+  <label for="login" class="form-label">Login</label>
+  <input type="text" class="form-control" nome="login" id="login" [(ngModel)]="usuario.login"/>
+
+  <label for="senha" class="form-label">Senha</label>
+  <input type="senha" class="form-control" nome="senha" id="senha" [(ngModel)]="usuario.senha"/>
+
+  <label for="email" class="form-label">Email</label>
+  <input type="email" class="form-control" nome="email" id="email" [(ngModel)]="usuario.email"/>
+
+  <label for="dataDeNascimento" class="form-label">Data de Nascimento</label>
+  <input type="date" class="form-control" nome="dataDeNascimento" id="dataDeNascimento" [(ngModel)]="usuario.dataDeNascimento"/>
+
+  <button type="button" class="btn btn-success" (click)="updateUser()">Editar</button>
+</div>

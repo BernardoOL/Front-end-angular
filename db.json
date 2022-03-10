@@ -1,0 +1,37 @@
+{
+  "produtos": [
+    {
+      "id": 1,
+      "nome": "Notebook i7",
+      "preco": 5500
+    },
+    {
+      "id": 2,
+      "nome": "Notebook i5",
+      "preco": 4500
+    },
+    {
+      "id": 3,
+      "nome": "Teclado mecanico",
+      "preco": 100
+    },
+    {
+      "id": 4,
+      "nome": "rato gamer",
+      "preco": "59.99",
+      "desconto": 10
+    },
+    {
+      "id": 5,
+      "nome": "teclado froxo",
+      "preco": "10",
+      "desconto": 10
+    },
+    {
+      "id": 6,
+      "nome": "teclado que brilha",
+      "preco": "500",
+      "desconto": 10
+    }
+  ]
+}
