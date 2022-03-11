@@ -15,7 +15,7 @@ export class EditarUsuariosComponent implements OnInit {
   usuario: Usuarios = new Usuarios();
   erros: Array<String> = []
   mostrarErros: boolean = false;
-  disable: boolean = false;
+  disabled: boolean = false;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -48,12 +48,14 @@ export class EditarUsuariosComponent implements OnInit {
           this.erros.push(error.error.parameterViolations[index].message);
         }
         this.mostrarErros = true;
-        this.disable = true
+        this.disabled = true
         setTimeout(() =>{
           this.mostrarErros = false
           this.erros = []
-          this.disable = false
+          this.disabled = false
         }, 5000);
+        console.log('Deu ruim');
+
       },
       () => console.log('Requisição completa')
     )

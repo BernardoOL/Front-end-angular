@@ -12,6 +12,9 @@ import { Usuarios } from 'src/app/usuarios/objetos/Usuarios';
 })
 export class CadastrarUsuarioComponent implements OnInit {
   usuario: Usuarios = new Usuarios();
+  erros: Array<String> = []
+  mostrarErros: boolean = false;
+  disabled: boolean = false;
 
   constructor(
     private userService: UsuariosService,
@@ -26,7 +29,20 @@ export class CadastrarUsuarioComponent implements OnInit {
     this.userService.createUser(this.usuario).subscribe(
       success => this.navegar('usuarios'),
       error =>{
-        console.log
+        // console.log(error.error.parameterViolations);
+        // for (let index = 0; index <error.error.parameterViolations.length; index++) {
+        //   this.erros.push(error.error.parameterViolations[index].message);
+        // }
+        // this.mostrarErros = true;
+        // this.disabled = true
+        // setTimeout(() =>{
+        //   this.mostrarErros = false
+        //   this.erros = []
+        //   this.disabled = false
+        // }, 5000);
+        console.log('Deu ruim');
+        console.log(error);
+
       }
     )
   };

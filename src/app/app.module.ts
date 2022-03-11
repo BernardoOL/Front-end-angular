@@ -7,19 +7,17 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { UsuariosComponent } from './usuarios/usuarios.component';
 import { UsuariosService } from './service/usuarios.service';
-import { CadastrarUsuarioComponent } from './usuarios/cadastrar-usuario/cadastrar-usuario.component';
-import { EditarUsuariosComponent } from './usuarios/editar-usuarios/editar-usuarios.component';
+import { LoginComponent } from './login/login.component';
+import { AuthService } from './login/auth.service';
+import { AuthGuard } from './guards/auth.guard';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    UsuariosComponent,
-    CadastrarUsuarioComponent,
-    EditarUsuariosComponent
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +25,7 @@ import { EditarUsuariosComponent } from './usuarios/editar-usuarios/editar-usuar
     HttpClientModule,
     FormsModule
   ],
-  providers: [UsuariosService, UsuariosService],
+  providers: [UsuariosService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,20 +1,39 @@
 <h1 class="text-center">Cadastrando Usuario</h1>
 
-<div>
-  <label for="nome" class="form-label">name</label>
-  <input type="text" class="form-control" nome="nome" id="nome" [(ngModel)]="usuario.nome"/>
+<div *ngIf="mostrarErros">
+  <div *ngFor="let error of erros">
+    <div class="alert alert-danger alert-dismissible fade show" role="alert" id="erro">
+      <strong>{{error}}</strong>
+    </div>
+  </div>
+</div>
 
-  <label for="login" class="form-label">Login</label>
-  <input type="text" class="form-control" nome="login" id="login" [(ngModel)]="usuario.login"/>
+<div class="mb-3">
+  <div>
+    <label for="nome" class="col-form-label">Name</label>
+    <input type="text" class="form-control" nome="nome" id="nome" [(ngModel)]="usuario.nome"/>
+  </div>
 
-  <label for="senha" class="form-label">Senha</label>
-  <input type="password" class="form-control" nome="senha" id="senha" [(ngModel)]="usuario.senha"/>
+  <div  div>
+    <label for="login" class="form-label">Login</label>
+    <input type="text" class="form-control" nome="login" id="login" [(ngModel)]="usuario.login"/>
+  </div>
 
-  <label for="email" class="form-label">Email</label>
+  <div>
+    <label for="senha" class="form-label">Senha</label>
+    <input type="password" class="form-control" nome="senha" id="senha" [(ngModel)]="usuario.senha"/>
+  </div>
+
+  <div>
+    <label for="email" class="form-label">Email</label>
   <input type="email" class="form-control" nome="email" id="email" [(ngModel)]="usuario.email"/>
+  </div>
 
-  <label for="dataDeNascimento" class="form-label">Data de Nascimento</label>
-  <input type="date" class="form-control" nome="dataDeNascimento" id="dataDeNascimento" [(ngModel)]="usuario.dataDeNascimento"/>
+  <div>
+    <label for="dataDeNascimento" class="form-label">Data de Nascimento</label>
+    <input type="date" class="form-control" nome="dataDeNascimento" id="dataDeNascimento" [(ngModel)]="usuario.dataDeNascimento"/>
+  </div>
 
-  <button type="button" class="btn btn-success" (click)="creatUser()">Cadastrar</button>
+
+  <button style="margin-top: 1%" type="button" class="btn btn-success" (click)="creatUser()" >Cadastrar</button>
 </div>

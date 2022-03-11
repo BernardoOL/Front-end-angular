@@ -1,7 +1,10 @@
 <h1 class="text-center">Listando Usuarios</h1>
+<button style="margin-right: 1%; margin-bottom: 1%;" type="button" class="btn btn-primary" data-bs-toggle="modal" (click)="aniversariantesDoMes()" data-bs-target="#aniversariantes">
+  Aniversariantes Do mês
+</button>
 <div class="table-responsive">
   <div class="text-right">
-    <button type="button" (click)="createUser()" class="btn btn-success">Cadastrar Usuarios</button>
+    <button style="margin-bottom: 1%;" type="button" (click)="createUser()" class="btn btn-success">Cadastrar Usuarios</button>
   </div>
   <table class="table table-striped">
     <thead>
@@ -32,3 +35,37 @@
   </table>
 </div>
 
+<!-- Modal -->
+<div class="modal fade" id="aniversariantes" tabindex="-1" aria-labelledby="Aniversariantes" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="aniversariantes">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col" class="text-center">Data de Aniversário</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let usuario of aniversariantes">
+                        <td>{{usuario.idUsuario}}</td>
+                        <td>{{usuario.nome}}</td>
+                        <td class="text-center">{{usuario.dataDeNascimento| date:'dd/MM/yyyy'}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

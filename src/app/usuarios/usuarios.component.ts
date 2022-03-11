@@ -12,6 +12,7 @@ import { Usuarios } from './objetos/Usuarios';
 export class UsuariosComponent implements OnInit {
   user: any
   usuarios: Array<Usuarios> = []
+  aniversariantes: Array<Usuarios> = []
 
   constructor(private usuariosService: UsuariosService, private router: Router) { }
 
@@ -38,10 +39,19 @@ export class UsuariosComponent implements OnInit {
 
   updateUser = (id: any) =>{
     this.router.navigate(['usuarios', id])
+    console.log(id);
+
   }
 
   createUser = () =>{
     this.router.navigate(['usuarios/novo']);
+  }
+
+  aniversariantesDoMes = () =>{
+    console.log('clicou');
+    this.usuariosService.aniversariantesDoMes().subscribe(response => {
+      this.aniversariantes = response;
+    });
   }
 
 }

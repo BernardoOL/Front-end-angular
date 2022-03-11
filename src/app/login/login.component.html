@@ -1,0 +1,14 @@
+<H1 class="text-center">LOGIN</H1>
+
+<div class="form-floating mb-3">
+  <label for="login">Email address</label>
+  <input type="text" class="form-control" id="login" #email="ngModel" [(ngModel)]="usuarioLogin.login" placeholder="nome@exemplo.com">
+  
+<div class="form-floating">
+  <label for="password">Password</label>
+  <input type="password" class="form-control" id="password" #senha="ngModel" [(ngModel)]="usuarioLogin.senha" placeholder="Digite a senha aqui">
+
+</div>
+
+
+<button class="btn btn-primary" [disabled]="email.invalid || senha.invalid" type="submit" (click)="fazerLogin()">Login</button>

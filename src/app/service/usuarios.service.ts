@@ -1,3 +1,4 @@
+import { usuarioLogin } from './../login/usuarioLogin';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
@@ -37,4 +38,12 @@ export class UsuariosService {
     return this.$http.post(`${this.API}`, usuario);
   }
 
+  //outros métodos
+  aniversariantesDoMes(){
+    return this.$http.get<Usuarios[]>(`${this.API}/aniversariantes`)
+  }
+
+   login(login: usuarioLogin){
+    return this.$http.post<Usuarios>(`${this.API}/login`, login)
+   }
 }
